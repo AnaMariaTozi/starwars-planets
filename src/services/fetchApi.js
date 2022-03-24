@@ -3,7 +3,8 @@ const fetchApi = async () => {
 
   const response = await fetch(endpoint);
   const json = await response.json();
-  return json.results;
+  const data = json.results;
+  return data;
 };
 
 export default fetchApi;
