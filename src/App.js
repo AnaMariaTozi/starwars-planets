@@ -1,13 +1,15 @@
 import React from 'react';
 import Provider from './context/Provider';
 import Table from './components/Table';
-import SearchFilter from './components/SearchFilter';
+import TextFilter from './components/TextFilter';
+import NumericFilter from './components/NumericFilter';
 import './App.css';
 
 function App() {
   return (
     <Provider>
-      <SearchFilter />
+      <TextFilter />
+      <NumericFilter />
       <Table />
     </Provider>
   );
