@@ -33,6 +33,11 @@ function NumericFilter() {
     ]);
   }
 
+  const getFilteredOptions = () => {
+    const getColumns = filtersResult.map((columns) => (columns.column));
+    return columnOptions.filter((option) => (!getColumns.includes(option)));
+  };
+
   return (
     <form>
       <select
@@ -41,7 +46,7 @@ function NumericFilter() {
         value={ filterByNumericValues.column }
         onChange={ handleChange }
       >
-        {columnOptions.map((item, index) => (
+        {getFilteredOptions().map((item, index) => (
           <option key={ index } value={ item }>{item}</option>
         ))}
       </select>
@@ -49,7 +54,7 @@ function NumericFilter() {
       <select
         data-testid="comparison-filter"
         name="comparison"
-        value={ filterByNumericValues.comparision }
+        value={ filterByNumericValues.comparison }
         onChange={ handleChange }
       >
         {comparisonOptions.map((item, index) => (
