@@ -17,22 +17,27 @@ function Provider({ children }) {
   }, []);
 
   const filteredPlanets = data
-  .filter((item) => item.name.toLowerCase()
-    .includes(filterByName.name.toLowerCase()))
-  .filter((planet) => filtersResult.every(({ comparison, value, column }) => {
-    if (comparison === 'maior que') {
-      return Number(planet[column]) > Number(value);
-    } if (comparison === 'menor que') {
-      return Number(planet[column]) < Number(value);
-    } if (comparison === 'igual a') {
-      return Number(planet[column]) === Number(value);
-    } return true;
-  }));
+    .filter((item) => item.name.toLowerCase()
+      .includes(filterByName.name.toLowerCase()))
+    .filter((planet) => filtersResult.every(({ comparison, value, column }) => {
+      if (comparison === 'maior que') {
+        return Number(planet[column]) > Number(value);
+      } if (comparison === 'menor que') {
+        return Number(planet[column]) < Number(value);
+      } if (comparison === 'igual a') {
+        return Number(planet[column]) === Number(value);
+      } return true;
+    }));
 
   return (
     <Context.Provider
       value={
-        { data, filterByName, setFilterByName, filtersResult, setFiltersResult, filteredPlanets }
+        { data,
+          filterByName,
+          setFilterByName,
+          filtersResult,
+          setFiltersResult,
+          filteredPlanets }
       }
     >
       {children}
