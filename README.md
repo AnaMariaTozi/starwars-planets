@@ -5,7 +5,7 @@ Este projeto trata-se de uma página contendo todas as informações dos planeta
 podendo ser filtradas por nome e entre outros atributos.
 Foi desenvolvido com o intuito de praticar o Context Api no React e a criação de filtros;
 
-## Técnologias usadas 
+## Tecnologias usadas 
 - React Hooks useState, useContext e useEffect;
 - React
 - Context API do React
